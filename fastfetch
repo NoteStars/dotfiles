@@ -1,0 +1,112 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "small",        // Logo type: auto, builtin, small, file, etc.
+    "width": 4,           // Width in characters
+    "height": 6,          // Height in characters
+
+    "padding": {
+      "top": 5,
+      "left": 3,
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "key": " PC: Lenovo Yoga Pro 9i (16IMH9)",
+      "keyColor": "green"
+    },
+
+    {
+      "type": "cpu",
+      "key": "│ ├ CPU",
+      "keyColor": "green"
+    },
+    
+    {
+      "type": "gpu",
+      "key": "│ ├󰍛 GPU",
+      "keyColor": "green"
+    },
+
+    {
+      "type": "memory",
+      "key": "│ ├󰍛 RAM",
+      "keyColor": "green"
+    },
+    
+    {
+      "type": "disk",
+      "key": "└ └",
+    "keyColor": "green"
+    },
+    
+    "break",
+    
+    {
+      "type": "custom",
+      "key": " OS",
+      "keyColor": "yellow"
+    },
+    
+    {
+      "type": "kernel",
+      "key": "│ ├",
+      "keyColor": "yellow"
+    },
+    
+    {
+      "type": "bios",
+      "key": "│ ├",
+      "keyColor": "yellow"
+    },
+    
+    {
+      "type": "packages",
+      "key": "│ ├󰏖",
+      "keyColor": "yellow"
+    },
+    
+    {
+      "type": "shell",
+      "key": "└ └",
+      "keyColor": "yellow"
+    },
+
+    "break",
+
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "blue"
+    },
+    
+    {
+      "type": "lm",
+      "key": "│ ├",
+      "keyColor": "blue"
+    },
+    
+    {
+      "type": "wm",
+      "key": "│ ├",
+      "keyColor": "blue"
+    },
+    
+    {
+      "type": "wmtheme",
+      "key": "│ ├󰉼",
+      "keyColor": "blue"
+    },
+    
+    {
+      "type": "terminal",
+      "key": "└ └",
+      "keyColor": "blue"
+    },
+
+    "break",
+    "break"
+  ]
+}
