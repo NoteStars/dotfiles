@@ -1,5 +1,4 @@
 {
-  "SKIP_HOST_UPDATE": true,
   "offloadAdmControls": true,
   "BACKGROUND_COLOR": "#2c2d32",
   "enableHardwareAcceleration": true,
@@ -12,6 +11,6 @@
     "width": 1279,
     "height": 931
   },
+  "SKIP_HOST_UPDATE": true,
   "MINIMIZE_TO_TRAY": false
-  
 }
