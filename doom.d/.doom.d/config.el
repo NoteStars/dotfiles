@@ -83,6 +83,14 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+
+;;(Install org-present if needed
+(unless (package-installed-p 'org-present)
+  (package-install 'org-present))
+
+(unless (package-installed-p 'org-bullets-mode)
+  (package-install 'org-bullets-mode))
 
 (use-package! org-bullets
     :hook (org-mode . org-bullets-mode)
@@ -127,3 +135,21 @@
     (remove-hook 'kill-emacs-hook 'elcord--cleanup-on-exit)))
 
 (add-hook 'elcord-mode-hook 'my/elcord-mode-hook)
+
+(use-package! org-present
+  :after org
+  :config
+  ;; Optional: customize org-present behavior
+  (add-hook 'org-present-mode-hook
+            (lambda ()
+              (org-present-big)
+              (org-display-inline-images)
+              (org-present-hide-cursor)
+              (org-present-read-only)))
+
+  (add-hook 'org-present-mode-quit-hook
+            (lambda ()
+              (org-present-small)
+              (org-remove-inline-images)
+              (org-present-show-cursor)
+              (org-present-read-write))))
