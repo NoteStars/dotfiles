@@ -13,9 +13,10 @@
   "modules": [
     "break",
     {
-      "type": "custom",
-      "key": " PC: Lenovo Yoga Pro 9i (16IMH9)",
-      "keyColor": "green"
+      "type": "host",
+      "key": " PC",
+      "keyColor": "green",
+      "text": "{hostName}"
     },
 
     {

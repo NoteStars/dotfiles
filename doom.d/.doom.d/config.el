@@ -92,6 +92,9 @@
 (unless (package-installed-p 'org-bullets-mode)
   (package-install 'org-bullets-mode))
 
+(unless (package-installed-p 'visual-fill-column)
+  (package-install 'visual-fill-column))
+
 (use-package! org-bullets
     :hook (org-mode . org-bullets-mode)
     :config
@@ -153,3 +156,21 @@
               (org-remove-inline-images)
               (org-present-show-cursor)
               (org-present-read-write))))
+
+;; Configure fill width
+(setq visual-fill-column-width 110
+      visual-fill-column-center-text t)
+
+(defun my/org-present-start ()
+  ;; Center the presentation and wrap lines
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1))
+
+(defun my/org-present-end ()
+  ;; Stop centering the document
+  (visual-fill-column-mode 0)
+  (visual-line-mode 0))
+
+;; Register hooks with org-present
+(add-hook 'org-present-mode-hook 'my/org-present-start)
+(add-hook 'org-present-mode-quit-hook 'my/org-present-end)

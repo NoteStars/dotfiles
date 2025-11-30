@@ -54,3 +54,4 @@
 ;; (unpin! t)
 (package! org-drill)
 (package! org-present)
+(package! visual-fill-column)
