@@ -5,8 +5,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(@ evil-tutor org-bullets org-bullets-mode org-drill org-present
-     visual-fill-column)))
+   '(@ evil-tutor org-bullets org-bullets-mode org-drill
+     org-present treemacs-evil treemacs-icons-dired treemacs-magit
+     treemacs-persp treemacs-projectile treemacs-tab-bar visual-fill-column)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,4 +1,3 @@
-
 ;; Tell Emacs to intrpret "Alt" to "Meta"
 ;; This covers both left-Alt and right-Alt (AltGr). If you only want the left side, you'll need a tiny extra step.
 ;;(setq x-alt-keysum 'meta)  ; Alt -> Meta
@@ -85,21 +84,6 @@
 ;; they are implemented.
 ;;
 
-;;(Install org-present if needed
-(unless (package-installed-p 'org-present)
-  (package-install 'org-present))
-
-(unless (package-installed-p 'org-bullets-mode)
-  (package-install 'org-bullets-mode))
-
-(unless (package-installed-p 'visual-fill-column)
-  (package-install 'visual-fill-column))
-
-(use-package! org-bullets
-    :hook (org-mode . org-bullets-mode)
-    :config
-)
-
 (load! "elcord.el")
 (elcord-mode)
 
@@ -174,3 +158,5 @@
 ;; Register hooks with org-present
 (add-hook 'org-present-mode-hook 'my/org-present-start)
 (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+
+(setq doom-theme 'catppuccin)

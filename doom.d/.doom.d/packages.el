@@ -55,3 +55,5 @@
 (package! org-drill)
 (package! org-present)
 (package! visual-fill-column)
+(package! elcord)
+(package! catppuccin-theme)
