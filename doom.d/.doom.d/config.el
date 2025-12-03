@@ -123,6 +123,31 @@
 
 (add-hook 'elcord-mode-hook 'my/elcord-mode-hook)
 
+;; Auto-enable/disable Elcord depending on client frames
+
+(defun my/elcord-maybe-start ()
+  "Start Elcord only if at least one graphical client frame exists."
+  (when (and (featurep 'elcord)
+             (display-graphic-p)
+             (not elcord-mode))
+    (elcord-mode 1)))
+
+(defun my/elcord-maybe-stop ()
+  "Stop Elcord if no graphical client frames remain."
+  (when (and (featurep 'elcord)
+             elcord-mode
+             (not (seq-some #'display-graphic-p (frame-list))))
+    (elcord-mode -1)))
+
+;; Hook: When a frame is created (e.g., opening a client window)
+(add-hook 'after-make-frame-functions
+          (lambda (_frame)
+            (my/elcord-maybe-start)))
+
+;; Hook: When a frame is deleted (e.g., closing a client window)
+(add-hook 'delete-frame-functions
+          (lambda (_frame)
+            (my/elcord-maybe-stop)))
 (use-package! org-present
   :after org
   :config
